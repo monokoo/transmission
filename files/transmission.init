@@ -41,21 +41,12 @@ section_enabled() {
 	[ $enabled -gt 0 ]
 }
 
+
 transmission() {
+
 	local cfg="$1"
-	local USE
-
-	local user
-	local group
-	local config_overwrite
-	local download_dir config_dir
-	local mem_percentage
-	local nice
-	local cmdline
-	local web_home
-
-	section_enabled "$section" || return 1
-
+	local user group config_overwrite download_dir config_dir mem_percentage nice web_home USE cmdline
+	
 	config_get config_dir "$cfg" 'config_dir' '/var/etc/transmission'
 	config_get user "$cfg" 'user'
 	config_get group "$cfg" 'group'
@@ -137,6 +128,7 @@ transmission() {
 
 start_service() {
 	config_load 'transmission'
+	section_enabled "$section" || return 1
 	config_foreach transmission 'transmission'
 }
 
