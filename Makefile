@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=transmission
 PKG_VERSION:=2.94
-PKG_RELEASE:=2
+PKG_RELEASE:=4
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=@GITHUB/transmission/transmission-releases/master
@@ -30,7 +30,7 @@ define Package/transmission/template
   SUBMENU:=BitTorrent
   SECTION:=net
   CATEGORY:=Network
-  TITLE:=BitTorrent client
+  TITLE:=BitTorrent client for personal
   URL:=http://www.transmissionbt.com
   DEPENDS:=+libcurl +libevent2 +libminiupnpc +libnatpmp +libpthread +librt +zlib
 endef
@@ -171,7 +171,7 @@ Package/transmission-remote-mbedtls/install = $(Package/transmission-remote-open
 
 define Package/transmission-web/install
 	$(INSTALL_DIR) $(1)/usr/share/transmission
-	$(CP) $(PKG_INSTALL_DIR)/usr/share/transmission/web $(1)/usr/share/transmission/
+	$(CP) -rf files/web $(1)/usr/share/transmission/
 endef
 
 $(eval $(call BuildPackage,transmission-daemon-openssl))
