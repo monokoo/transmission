@@ -93,25 +93,25 @@ define Package/transmission-daemon/Default/description
  Transmission is a simple BitTorrent client.
  It features a very simple, intuitive interface
  on top on an efficient, cross-platform back-end.
- This package contains the daemon itself.
+ This package contains the daemon itself for personal.
 endef
 Package/transmission-daemon-openssl/description = $(Package/transmission-daemon/Default/description)
 Package/transmission-daemon-mbedtls/description = $(Package/transmission-daemon/Default/description)
 
 define Package/transmission-cli/Default/description
- CLI utilities for transmission.
+ CLI utilities for transmission for personal.
 endef
 Package/transmission-cli-openssl/description = $(Package/transmission-cli/Default/description)
 Package/transmission-cli-mbedtls/description = $(Package/transmission-cli/Default/description)
 
 define Package/transmission-remote/Default/description
- CLI remote interface for transmission.
+ CLI remote interface for transmission for personal.
 endef
 Package/transmission-remote-openssl/description = $(Package/transmission-remote/Default/description)
 Package/transmission-remote-mbedtls/description = $(Package/transmission-remote/Default/description)
 
 define Package/transmission-web/description
- Webinterface resources for transmission.
+ Webinterface resources for transmission for personal.
 endef
 
 define Package/transmission-daemon-openssl/conffiles
